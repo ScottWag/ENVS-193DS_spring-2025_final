@@ -3,6 +3,7 @@ title: "ENVS 193DS - Final"
 author: Scott Wagner
 date: "June 4, 2025"
 format: html
+toc: true
 ---
 
 # Github Repository
