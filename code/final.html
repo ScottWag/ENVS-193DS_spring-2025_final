@@ -196,23 +196,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">month_num =</span> <span class="fu">month</span>(date), <span class="co"># extracts the numeric month from the date</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">month =</span> <span class="fu">factor</span>(<span class="fu">substr</span>(month.name[month_num], <span class="dv">1</span>, <span class="dv">3</span>), <span class="at">levels =</span> <span class="fu">substr</span>(month.name, <span class="dv">1</span>, <span class="dv">3</span>), <span class="at">ordered =</span> <span class="cn">TRUE</span>) <span class="co"># converts months to three letter ordered factor </span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year_num <span class="sc">&gt;=</span> <span class="dv">2018</span> <span class="sc">&amp;</span> year_num <span class="sc">&lt;=</span> <span class="dv">2023</span>) <span class="sc">%&gt;%</span> <span class="co"># only include years 2018-2023</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.factor</span>(year_num)) <span class="sc">%&gt;%</span> <span class="co">#converts numeric year to factor </span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, month) <span class="sc">%&gt;%</span> <span class="co"># groups by year and month for monthly averages</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_monthly_sst =</span> <span class="fu">round</span>(<span class="fu">mean</span>(temp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="co"># computs mean sst and round to 1 decimal, ungroup after summarizing </span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#Display 5 rows</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_sample</span>(sst_clean, <span class="at">n =</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year_num <span class="sc">&gt;=</span> <span class="dv">2018</span> <span class="sc">&amp;</span> year_num <span class="sc">&lt;=</span> <span class="dv">2023</span>) <span class="sc">%&gt;%</span> <span class="co"># only include years 2018-2023</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.factor</span>(year_num)) <span class="sc">%&gt;%</span> <span class="co">#converts numeric year to factor </span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, month) <span class="sc">%&gt;%</span> <span class="co"># groups by year and month for monthly averages</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_monthly_sst =</span> <span class="fu">round</span>(<span class="fu">mean</span>(temp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="co"># computes mean sst and round to 1 decimal, ungroup after summarizing </span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#Display 5 rows</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_sample</span>(sst_clean, <span class="at">n =</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 3
   year  month mean_monthly_sst
   &lt;fct&gt; &lt;ord&gt;            &lt;dbl&gt;
-1 2020  Aug               17.8
-2 2020  Nov               15.5
-3 2022  Dec               14.8
-4 2018  Jun               15.5
-5 2020  Sep               18.7</code></pre>
+1 2018  Nov               17.9
+2 2019  May               14.3
+3 2019  Nov               16.8
+4 2021  Aug               17.7
+5 2020  Jul               17  </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Display the structure of cleaned data</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sst_clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

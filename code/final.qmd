@@ -51,11 +51,10 @@ sst_clean <- sst %>%
     month_num = month(date), # extracts the numeric month from the date
     month = factor(substr(month.name[month_num], 1, 3), levels = substr(month.name, 1, 3), ordered = TRUE) # converts months to three letter ordered factor 
   ) %>%
-  
   filter(year_num >= 2018 & year_num <= 2023) %>% # only include years 2018-2023
   mutate(year = as.factor(year_num)) %>% #converts numeric year to factor 
   group_by(year, month) %>% # groups by year and month for monthly averages
-  summarise(mean_monthly_sst = round(mean(temp, na.rm = TRUE), 1), .groups = "drop") # computs mean sst and round to 1 decimal, ungroup after summarizing 
+  summarise(mean_monthly_sst = round(mean(temp, na.rm = TRUE), 1), .groups = "drop") # computes mean sst and round to 1 decimal, ungroup after summarizing 
 
 #Display 5 rows
 slice_sample(sst_clean, n =5)
