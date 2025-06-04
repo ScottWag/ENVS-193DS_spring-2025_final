@@ -43,7 +43,24 @@ Two additional tests/pieces of information that should be included to provide mo
 
 ```{r}
 
+#Clean the data
+sst_clean <- sst %>%
+  mutate(
+    date = ymd(date),
+    year_num = year(date),
+    month_num = month(date),
+    month = factor(substr(month.name[month_num], 1, 3), levels = substr(month.name, 1, 3), ordered = TRUE)
+  ) %>%
+  
+  filter(year_num >= 2018 & year_num <= 2023) %>%
+  mutate(year = as.factor(year_num)) %>%
+  group_by(year, month) %>%
+  summarise(mean_monthly_sst = round(mean(temp, na.rm = TRUE), 1), .groups = "drop")
 
+#Display 5 rows
+slice_sample(sst_clean, n =5)
+#Display the structure of cleaned data
+str(sst_clean)
 
 ```
 
