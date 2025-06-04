@@ -24,9 +24,15 @@ library(readr)
 
 ## a. Transparent statistical methods
 
+In part 1, they used a Pearson correlation to test the linear relationship between the two variables, distance from headwater and nitrogen load. In part 2, they used a one-way ANOVA to test for differences in average nitrogen load among the six different nitrogen sources.
+
 ## b. More information needed
 
+Two additional tests/pieces of information that should be included to provide more context for the results would be a test for effect size (eta-squared) and a data visualization (boxplot or bar chart). An effect size test tells the viewer whether the observed differences are statistically significant, represented by a p-value. A data visualization helps communicate the patterns, variability, and group differences in a more accessible way by making the analysis visible.
+
 ## c. Suggestions for rewriting
+
+
 
 # Problem 2. Data visualization
 
