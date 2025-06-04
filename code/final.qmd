@@ -1,5 +1,23 @@
 ---
 title: "ENVS 193DS - Final"
+author: Scott Wagner
+date: "June 4, 2025"
 format: html
 ---
+
+## Github Repository
+https://github.com/ScottWag/ENVS-193DS_spring-2025_final
+
+## Setup
+```{r}
+#| message: false
+#| warning: false
+
+#Load in packages
+library(tidyverse)
+library(here)
+library(janitor)
+library(readr)
+
+```
 
