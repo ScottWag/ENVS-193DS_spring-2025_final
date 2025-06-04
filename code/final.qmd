@@ -17,7 +17,10 @@ https://github.com/ScottWag/ENVS-193DS_spring-2025_final
 library(tidyverse)
 library(here)
 library(janitor)
-library(readr)
+library(dplyr)
+
+#Read in sea surface temperature data
+sst <- read_csv(here("data", "SST_update2023.csv"))
 
 ```
 # Problem 1. Research writing
@@ -37,6 +40,12 @@ Two additional tests/pieces of information that should be included to provide mo
 # Problem 2. Data visualization
 
 ## a. Cleaning and summarizing
+
+```{r}
+
+
+
+```
 
 ## b. Visualize the data
 
