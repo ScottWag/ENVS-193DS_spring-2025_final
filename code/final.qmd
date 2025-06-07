@@ -23,6 +23,8 @@ library(ggplot2)
 
 #Read in sea surface temperature data
 sst <- read_csv(here("data", "SST_update2023.csv"))
+#read in data for problem 3 
+nest_boxes <- read_csv(here("data", "occdist.csv"))
 
 ```
 # Problem 1. Research writing
