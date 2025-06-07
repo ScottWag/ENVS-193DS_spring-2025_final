@@ -94,7 +94,23 @@ ggplot(sst_clean, aes(x = month, y = mean_monthly_sst, group = year, color = yea
 
 # Problem 3. Data analysis
 
+```{r}
+#| include: false
+glimpse(nest_boxes)
+summary(nest_boxes)
+
+# creating data frame
+nest_boxes_clean <- nest_boxes |>
+  #clean names
+  clean_names()
+
+
+```
+
+
 ## a. Response variable
+
+In the data set, 1s represent nest boxes occupied by Swift Parrots, the target species of the study. 0s represent boxes that were not occupied by Swift Parrots, meaning they either did not use it, or were out competed by another species. 
 
 ## b. Purpose of study
 
