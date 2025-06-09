@@ -22,6 +22,7 @@ library(dplyr)
 library(ggplot2)
 library(DHARMa)
 library(MuMIn)
+library(ggeffects)
 
 #Read in sea surface temperature data
 sst <- read_csv(here("data", "SST_update2023.csv"))
@@ -100,15 +101,16 @@ ggplot(sst_clean, aes(x = month, y = mean_monthly_sst, group = year, color = yea
 #| include: false
 
 # creating data frame
-nest_boxes_clean <- nest_boxes |>
+nest_boxes_clean <- nest_boxes %>%
   #clean names
-  clean_names() |>
+  clean_names() %>%
   # add factors for modeling
   mutate(
     season = factor(season),
     repeated_use = factor(repeated_use),
     box_occupant = factor(box_occupant)
-  )
+  ) %>%
+  select (edge_distance, season, sp)
 
 glimpse(nest_boxes_clean)  
 
@@ -188,7 +190,36 @@ The best model as determined by Akaike's Information Criterion (AIC) was the sat
 
 ## h. Visualize model predictions
 
+```{r}
+
+# get predictions from model1 using ggpredict
+prediction <- ggpredict(model1, terms = c("edge_distance [0:1100 by=10]", "season"))
+
+# plot predictions
+ggplot(prediction, aes(x = x, y = predicted, color = group)) +
+  geom_line(linewidth = 1.2) +  # predicted line
+  geom_ribbon(aes(ymin = conf.low, ymax = conf.high, fill = group), alpha = 0.25, color = NA) +  # 95% confidence interval
+  geom_jitter(data = nest_boxes_clean, aes(x = edge_distance, y = sp, color = season),
+              height = 0.05, width = 15, alpha = 0.4, inherit.aes = FALSE) +  # data points
+  labs(
+    x = "Distance from Forest Edge (m)", # x-axis label
+    y = "Probability of Swift Parrot Occupancy", #y-axis label
+    color = "Season", # color by season
+    fill = "Season" # fill by season
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(panel.grid = element_blank()) +  # remove gridlines
+  scale_color_manual(values = c("2016" = "lightblue", "2019" = "seagreen")) +  # custom colors (lines/points)
+  scale_fill_manual(values = c("2016" = "lightblue", "2019" = "seagreen")) # custom colors (fill)
+
+```
+
 ## i. Write a caption for your figure
+
+**Figure 1. Predicted Swift Parrot next box occupancy by distance from forest edge (m) and season.**
+
+The figure shows predicted probabilities of Swift Parrot occupancy in nest boxes as a function of distance from forest edge (m) for two breeding seasons (2016 and 2019). The predictions were generated from the best fitting model according to Akaike's Information Criterion (AIC) and are visualized through a binomial generalized linear model, using ggpredict and ggplot. Shaded ribbons represent 95% confidence intervals and raw data is overlayed as jittered points. Seasons are differentiated by color with 2019 in green and 2016 in light blue.
+**Reference Data:** Stojanovic, Dejan et al. (2021). *Do nest boxes breed the target species or its competitors? A case study of a critically endangered bird* [Dataset]. Dryad. https://doi.org/10.5061/dryad.83bk3j9sb
 
 ## j. Calculate model predictions 
 
