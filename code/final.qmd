@@ -109,8 +109,7 @@ nest_boxes_clean <- nest_boxes %>%
     season = factor(season),
     repeated_use = factor(repeated_use),
     box_occupant = factor(box_occupant)
-  ) %>%
-  select (edge_distance, season, sp)
+  )
 
 glimpse(nest_boxes_clean)  
 
@@ -222,6 +221,12 @@ The figure shows predicted probabilities of Swift Parrot occupancy in nest boxes
 **Reference Data:** Stojanovic, Dejan et al. (2021). *Do nest boxes breed the target species or its competitors? A case study of a critically endangered bird* [Dataset]. Dryad. https://doi.org/10.5061/dryad.83bk3j9sb
 
 ## j. Calculate model predictions 
+
+```{r}
+# calculate model predictions
+model_predict <- ggpredict(model1, terms = c("edge_distance [0,900]", "season"))
+model_predict
+```
 
 ## k. Interpret your results
 
