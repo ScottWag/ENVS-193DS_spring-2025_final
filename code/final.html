@@ -212,11 +212,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code># A tibble: 5 × 3
   year  month mean_monthly_sst
   &lt;fct&gt; &lt;ord&gt;            &lt;dbl&gt;
-1 2019  Jun               15.8
-2 2023  Aug               18.5
-3 2020  May               14.6
-4 2020  Sep               18.7
-5 2020  Oct               19  </code></pre>
+1 2020  Aug               17.8
+2 2021  Jul               17.6
+3 2019  Nov               16.8
+4 2020  Jan               14.6
+5 2021  Oct               16.6</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Display the structure of cleaned data</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sst_clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -432,7 +432,7 @@ Models ranked by AICc(x) </code></pre>
 <section id="i.-write-a-caption-for-your-figure" class="level2">
 <h2 class="anchored" data-anchor-id="i.-write-a-caption-for-your-figure">i. Write a caption for your figure</h2>
 <p><strong>Figure 1. Predicted Swift Parrot next box occupancy by distance from forest edge (m) and season.</strong></p>
-<p>The figure shows predicted probabilities of Swift Parrot occupancy in nest boxes as a function of distance from forest edge (m) for two breeding seasons (2016 and 2019). The predictions were generated from the best fitting model according to Akaike’s Information Criterion (AIC) and are visualized through a binomial generalized linear model, using ggpredict and ggplot. Shaded ribbons represent 95% confidence intervals and raw data is overlayed as jittered points. Seasons are differentiated by color with 2019 in green and 2016 in light blue. <strong>Reference Data:</strong> Stojanovic, Dejan et al.&nbsp;(2021). <em>Do nest boxes breed the target species or its competitors? A case study of a critically endangered bird</em> [Dataset]. Dryad. https://doi.org/10.5061/dryad.83bk3j9sb</p>
+<p>The figure shows predicted probabilities of Swift Parrot occupancy in nest boxes as a function of distance from forest edge (m) for two breeding seasons (2016 and 2019). The predictions were generated from the best fitting model according to Akaike’s Information Criterion (AIC) and are visualized through a binomial generalized linear model, using ggpredict and ggplot. Shaded ribbons represent 95% confidence intervals and raw data is overlayed as jittered points. Seasons are differentiated by color with 2019 in green and 2016 in light blue. <strong>Data Citation:</strong> Stojanovic, Dejan et al.&nbsp;(2021). <em>Do nest boxes breed the target species or its competitors? A case study of a critically endangered bird</em> [Dataset]. Dryad. https://doi.org/10.5061/dryad.83bk3j9sb</p>
 </section>
 <section id="j.-calculate-model-predictions" class="level2">
 <h2 class="anchored" data-anchor-id="j.-calculate-model-predictions">j. Calculate model predictions</h2>
@@ -461,6 +461,7 @@ edge_distance | Predicted |     95% CI
 </section>
 <section id="k.-interpret-your-results" class="level2">
 <h2 class="anchored" data-anchor-id="k.-interpret-your-results">k. Interpret your results</h2>
+<p>In both 2016 and 2019, the predicted probability of Swift Parrot box occupancy is highest at the forest edge (0m) and decreases with increasing distance (900m). More specifically, occupancy probability dropped from 0.48 to 0.12 in 2016 and 0.30 to 0.06 in 2019 (See table from part j). The distinct negative relationship suggests that Swift Parrots strongly prefer nest boxes closer to the forest edge (See Figure 1). Biologically, the trend reflects the species’ reliance on forest resources such as proximity to native vegetation, which lacks in accessibility with distance from edge. Inversely, Tree Martins prefer occupying boxes further from the forest edge, likely due to tolerance of open habitats and alternative nesting ecology. Common Starlings on the other hand, also showed a negative relationship between occupancy probability and distance potentially equating to additional competition for Swift Parrots.</p>
 </section>
 </section>
 <section id="problem-4.-affective-and-exploratory-visualizations" class="level1">
