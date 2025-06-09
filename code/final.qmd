@@ -20,6 +20,8 @@ library(here)
 library(janitor)
 library(dplyr)
 library(ggplot2)
+library(DHARMa)
+library(MuMIn)
 
 #Read in sea surface temperature data
 sst <- read_csv(here("data", "SST_update2023.csv"))
@@ -96,14 +98,19 @@ ggplot(sst_clean, aes(x = month, y = mean_monthly_sst, group = year, color = yea
 
 ```{r}
 #| include: false
-glimpse(nest_boxes)
-summary(nest_boxes)
 
 # creating data frame
 nest_boxes_clean <- nest_boxes |>
   #clean names
-  clean_names()
+  clean_names() |>
+  # add factors for modeling
+  mutate(
+    season = factor(season),
+    repeated_use = factor(repeated_use),
+    box_occupant = factor(box_occupant)
+  )
 
+glimpse(nest_boxes_clean)  
 
 ```
 
@@ -114,15 +121,70 @@ In the data set, 1s represent nest boxes occupied by Swift Parrots, the target s
 
 ## b. Purpose of study
 
+The study compares nest box usage between Swift Parrots, Common Starlings, and Tree Martins. The main difference is that Swift Parrots, the conservation target species, are critically endangered and the study goal is to understand whether the nest boxes help the target species or benefit its competitors. 
+
 ## c. Difference in “seasons”
+
+The difference in "seasons" refers to the years 2016 and 2019, when the box occupancy data was collected. The years differ in terms of the population dynamics, environmental conditions, and competitive pressures of the two other birds.
 
 ## d. Table of models
 
+| Model number | Season | Distance to forest edge | Model description | 
+|:------------:|:------:|:-----------------------:|:-----------------:|  
+| 0            |        |                         | Null model        | 
+| 1            |    X   |            X            | Saturated model   |  
+| 2            |    X   |                         | Season only       | 
+| 3            |        |            X            | Distance from forest edge only|     
+
+
 ## e. Run the models
+
+```{r}
+# Run models
+ 
+# model 0: Null model
+model0 <- glm(sp ~ 1, family = binomial, data = nest_boxes_clean)
+# model 1: Saturated model
+model1 <- glm(sp ~ season + edge_distance, family = binomial, data = nest_boxes_clean)
+# model 2: Season only 
+model2 <- glm(sp ~ season, family = binomial, data = nest_boxes_clean)
+# model 3: Distance from forest edge only 
+model3 <- glm(sp ~ edge_distance, family = binomial, data = nest_boxes_clean)
+
+```
+
 
 ## f. Check the diagnostics
 
+```{r}
+# check for diagnostics using DHARMa package
+ 
+# For model 0
+residual0 <- simulateResiduals(model0) 
+plot(residual0)
+
+# For model 1
+residual1 <- simulateResiduals(model1) 
+plot(residual1)
+
+# For model 2
+residual2 <- simulateResiduals(model2) 
+plot(residual2)
+
+# For model 3
+residual3 <- simulateResiduals(model3) 
+plot(residual3)
+
+```
+
+
 ## g. Select the best model
+
+```{r}
+# use MuMIn pakage to select the best model through AIC
+model.sel(model0, model1, model2, model3)
+```
+The best model as determined by Akaike's Information Criterion (AIC) was the saturated model, including both season and distance to forest edge.
 
 ## h. Visualize model predictions
 
