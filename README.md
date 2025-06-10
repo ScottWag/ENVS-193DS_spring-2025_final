@@ -1,4 +1,9 @@
 # General Information
+Author: Scott Wagner
+
+Published: June 4, 2025
+
+Course: ENVS 193DS – Data Science for Environmental Studies
 
 Final for ENVS 193DS due June 11, 2025
 
@@ -24,16 +29,16 @@ Problem 3 Data: Stojanovic, Dejan et al. (2021). Do nest boxes breed the target 
 ENVS-193DS_spring-2025_final
 ├─ .DS_Store
 ├─ .gitignore
-├─ ENVS-193DS_spring-2025_final.Rproj
-├─ README.md
+├─ ENVS-193DS_spring-2025_final.Rproj # RStudio project
+├─ README.md # Readme
 ├─ code
-│  ├─ final.html
-│  ├─ final.qmd
-│  └─ final_files
+│  ├─ final.html # Rendered html output
+│  ├─ final.qmd # Quarto source file
+│  └─ final_files # Supporting files for html
 └─ data
    ├─ .DS_Store
-   ├─ SST_update2023.csv
-   └─ occdist.csv
+   ├─ SST_update2023.csv # Sea surface temperature data
+   └─ occdist.csv # Nest box occupancy data
 ```
 
 
