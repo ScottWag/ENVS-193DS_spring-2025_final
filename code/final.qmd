@@ -34,13 +34,14 @@ nest_boxes <- read_csv(here("data", "occdist.csv"))
 
 ## a. Transparent statistical methods
 
-In part 1, they used a Pearson correlation to test the linear relationship between the two variables, distance from headwater and nitrogen load. In part 2, they used a one-way ANOVA to test for differences in average nitrogen load among the six different nitrogen sources.
+In part 1, they used a Pearson correlation coefficient to test the linear relationship between the two variables, distance from headwater (km) and nitrogen load (kg year⁻¹). In part 2, they used a one-way ANOVA to test for differences in average nitrogen load among the six different nitrogen sources.
 
 ## b. More information needed
 
 Two additional tests/pieces of information that should be included in order to provide more context for the results would be a test for effect size (eta-squared) and a data visualization (boxplot or bar chart). An effect size test tells the viewer whether the observed differences are statistically significant, represented by a p-value. A data visualization helps communicate the patterns, variability, and group differences in a more accessible way by making the analysis visible.
 
 ## c. Suggestions for rewriting
+
 
 # Problem 2. Data visualization
 
@@ -236,7 +237,7 @@ In both 2016 and 2019, the predicted probability of Swift Parrot box occupancy i
 
 ## a. Comparing visualizations
 
-
+There are many differences between my affective visualization from homework 3 and my exploratory visualizations from homework 2. In my homework 2 visualizations, I created two quantitative graphs (box plot and scatter plot) to show data patterns such as daily phone usage and pickups between my two categories (school day or weekend). In contrast, my homework 3 visualization uses a similar but more stylized approach, representing the categories by symbols, while still displaying the difference in daily usage between them. My affective visualization has more personal identity, represented as my own phone screen and serves as both an artistic and statistical approach. All three visualizations are centered around the theme of phone usage, the data that I personally collected and the impact that it has on my daily life. They all serve the same role of telling a story that the viewer can understand. I cannot see any patterns from my scatterplot because I did not us the same variables. However, from my box plot I can see the same trend in difference of means that I can also see in my affective visualization. I found that I use my phone more on weekdays than weekends, but not a significant amount. In week 9, the feedback that I got in workshop was to add labels to my affective visualization to give more context to what I am displaying. I decided to add the numbers in minutes that I use my phone per day and label each category in addition to the symbols. Although I had the information in my write up, I think it gives the viewer a better understanding of the story that I am trying to tell.
 
 ## b. Sharing your affective visualization
 

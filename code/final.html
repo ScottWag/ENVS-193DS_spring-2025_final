@@ -177,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Problem 1. Research writing</h1>
 <section id="a.-transparent-statistical-methods" class="level2">
 <h2 class="anchored" data-anchor-id="a.-transparent-statistical-methods">a. Transparent statistical methods</h2>
-<p>In part 1, they used a Pearson correlation to test the linear relationship between the two variables, distance from headwater and nitrogen load. In part 2, they used a one-way ANOVA to test for differences in average nitrogen load among the six different nitrogen sources.</p>
+<p>In part 1, they used a Pearson correlation coefficient to test the linear relationship between the two variables, distance from headwater (km) and nitrogen load (kg year⁻¹). In part 2, they used a one-way ANOVA to test for differences in average nitrogen load among the six different nitrogen sources.</p>
 </section>
 <section id="b.-more-information-needed" class="level2">
 <h2 class="anchored" data-anchor-id="b.-more-information-needed">b. More information needed</h2>
@@ -211,11 +211,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code># A tibble: 5 × 3
   year  month mean_monthly_sst
   &lt;fct&gt; &lt;ord&gt;            &lt;dbl&gt;
-1 2020  Aug               17.8
-2 2018  Sep               18.2
-3 2021  Jun               15.9
-4 2023  Apr               12.4
-5 2023  Jul               16.3</code></pre>
+1 2018  Nov               17.9
+2 2021  Nov               15.8
+3 2021  Dec               14.4
+4 2018  Apr               12.8
+5 2020  Aug               17.8</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Display the structure of cleaned data</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sst_clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -465,6 +465,7 @@ edge_distance | Predicted |     95% CI
 <h1>Problem 4. Affective and exploratory visualizations</h1>
 <section id="a.-comparing-visualizations" class="level2">
 <h2 class="anchored" data-anchor-id="a.-comparing-visualizations">a. Comparing visualizations</h2>
+<p>There are many differences between my affective visualization from homework 3 and my exploratory visualizations from homework 2. In my homework 2 visualizations, I created two quantitative graphs (box plot and scatter plot) to show data patterns such as daily phone usage and pickups between my two categories (school day or weekend). In contrast, my homework 3 visualization uses a similar but more stylized approach, representing the categories by symbols, while still displaying the difference in daily usage between them. My affective visualization has more personal identity, represented as my own phone screen and serves as both an artistic and statistical approach. All three visualizations are centered around the theme of phone usage, the data that I personally collected and the impact that it has on my daily life. They all serve the same role of telling a story that the viewer can understand. I cannot see any patterns from my scatterplot because I did not us the same variables. However, from my box plot I can see the same trend in difference of means that I can also see in my affective visualization. I found that I use my phone more on weekdays than weekends, but not a significant amount. In week 9, the feedback that I got in workshop was to add labels to my affective visualization to give more context to what I am displaying. I decided to add the numbers in minutes that I use my phone per day and label each category in addition to the symbols. Although I had the information in my write up, I think it gives the viewer a better understanding of the story that I am trying to tell.</p>
 </section>
 <section id="b.-sharing-your-affective-visualization" class="level2">
 <h2 class="anchored" data-anchor-id="b.-sharing-your-affective-visualization">b. Sharing your affective visualization</h2>
