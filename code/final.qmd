@@ -42,6 +42,10 @@ Two additional tests/pieces of information that should be included in order to p
 
 ## c. Suggestions for rewriting
 
+**For part 1:** Annual nitrogen load (kg year⁻¹) increased with additional distance from the river's headwaters (km), suggesting a cumulative impact of nitrogen sources downstream. (Pearson's correlation: r = correlation coefficient, p = 0.03, α = significance level)
+
+**For part 2:** Average nitrogen load differed significantly between source types, indicating that some sources contribute more to total nitrogen input than others. (One-way ANOVA: F = F statistic, df = degrees of freedom, p = 0.02, η² = effect size, α = significance level )
+
 
 # Problem 2. Data visualization
 

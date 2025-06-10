@@ -185,6 +185,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="c.-suggestions-for-rewriting" class="level2">
 <h2 class="anchored" data-anchor-id="c.-suggestions-for-rewriting">c.&nbsp;Suggestions for rewriting</h2>
+<p><strong>For part 1:</strong> Annual nitrogen load (kg year⁻¹) increased with additional distance from the river’s headwaters (km), suggesting a cumulative impact of nitrogen sources downstream. (Pearson’s correlation: r = correlation coefficient, p = 0.03, α = significance level)</p>
+<p><strong>For part 2:</strong> Average nitrogen load differed significantly between source types, indicating that some sources contribute more to total nitrogen input than others. (One-way ANOVA: F = F statistic, df = degrees of freedom, p = 0.02, η² = effect size, α = significance level )</p>
 </section>
 </section>
 <section id="problem-2.-data-visualization" class="level1">
@@ -211,11 +213,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code># A tibble: 5 × 3
   year  month mean_monthly_sst
   &lt;fct&gt; &lt;ord&gt;            &lt;dbl&gt;
-1 2018  Nov               17.9
-2 2021  Nov               15.8
-3 2021  Dec               14.4
-4 2018  Apr               12.8
-5 2020  Aug               17.8</code></pre>
+1 2023  May               14.3
+2 2020  Aug               17.8
+3 2018  Nov               17.9
+4 2023  Sep               18.4
+5 2019  Aug               17  </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Display the structure of cleaned data</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sst_clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
