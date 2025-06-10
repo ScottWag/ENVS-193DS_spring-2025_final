@@ -38,7 +38,7 @@ In part 1, they used a Pearson correlation to test the linear relationship betwe
 
 ## b. More information needed
 
-Two additional tests/pieces of information that should be included to provide more context for the results would be a test for effect size (eta-squared) and a data visualization (boxplot or bar chart). An effect size test tells the viewer whether the observed differences are statistically significant, represented by a p-value. A data visualization helps communicate the patterns, variability, and group differences in a more accessible way by making the analysis visible.
+Two additional tests/pieces of information that should be included in order to provide more context for the results would be a test for effect size (eta-squared) and a data visualization (boxplot or bar chart). An effect size test tells the viewer whether the observed differences are statistically significant, represented by a p-value. A data visualization helps communicate the patterns, variability, and group differences in a more accessible way by making the analysis visible.
 
 ## c. Suggestions for rewriting
 
@@ -126,8 +126,7 @@ The study compares nest box usage between Swift Parrots, Common Starlings, and T
 
 ## c. Difference in “seasons”
 
-The difference in "seasons" refers to the years 2016 and 2019, when the box occupancy data was collected. The years differ in terms of the population dynamics, environmental conditions, and competitive pressures of the two other birds.
-
+The difference in "seasons" refers to the years 2016 and 2019, when the box occupancy data was collected due to mast tree flowering events triggering Swift Parrot breeding at the study site. The years differ in terms of the population dynamics, environmental conditions, and competitive pressures of the two other birds. 
 ## d. Table of models
 
 | Model number | Season | Distance to forest edge | Model description | 
@@ -185,7 +184,7 @@ plot(residual3)
 # use MuMIn pakage to select the best model through AIC
 model.sel(model0, model1, model2, model3)
 ```
-The best model as determined by Akaike's Information Criterion (AIC) was the saturated model, including both season and distance to forest edge.
+The best model, as determined by Akaike's Information Criterion (AIC), was the saturated model. The model includes both season and distance to forest edge as predictors, with the response variable as nest box occupancy (represented as 1 for occupied and 0 for unoccupied).
 
 ## h. Visualize model predictions
 
@@ -215,9 +214,10 @@ ggplot(prediction, aes(x = x, y = predicted, color = group)) +
 
 ## i. Write a caption for your figure
 
-**Figure 1. Predicted Swift Parrot next box occupancy by distance from forest edge (m) and season.**
+**Figure 1.** *Predicted probability of Swift Parrot nest box occupancy by distance from forest edge across two breeding seasons (2019 and 2019).*
 
-The figure shows predicted probabilities of Swift Parrot occupancy in nest boxes as a function of distance from forest edge (m) for two breeding seasons (2016 and 2019). The predictions were generated from the best fitting model according to Akaike's Information Criterion (AIC) and are visualized through a binomial generalized linear model, using ggpredict and ggplot. Shaded ribbons represent 95% confidence intervals and raw data is overlayed as jittered points. Seasons are differentiated by color with 2019 in green and 2016 in light blue.
+The figure shows predicted probabilities of Swift Parrot occupancy in nest boxes as a function of distance from forest edge (m) for two breeding seasons (2016 and 2019). The predictions were generated from the best fitting model according to Akaike's Information Criterion (AIC) and are visualized through a binomial generalized linear model, using ggpredict and ggplot. Seasons are differentiated by color with 2019 in green and 2016 in light blue. Shaded ribbons represent 95% confidence intervals (color coded by season). Points represent observed occupancy values (1 = occupied, 0 = unoccupied) and are jittered to reduce overlap.
+
 **Data Citation:** Stojanovic, Dejan et al. (2021). *Do nest boxes breed the target species or its competitors? A case study of a critically endangered bird* [Dataset]. Dryad. https://doi.org/10.5061/dryad.83bk3j9sb
 
 ## j. Calculate model predictions 
@@ -236,6 +236,10 @@ In both 2016 and 2019, the predicted probability of Swift Parrot box occupancy i
 
 ## a. Comparing visualizations
 
+
+
 ## b. Sharing your affective visualization
+
+Done in section
 
 
