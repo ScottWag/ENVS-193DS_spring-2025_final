@@ -101,6 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#a.-response-variable" id="toc-a.-response-variable" class="nav-link" data-scroll-target="#a.-response-variable">a. Response variable</a></li>
   <li><a href="#b.-purpose-of-study" id="toc-b.-purpose-of-study" class="nav-link" data-scroll-target="#b.-purpose-of-study">b. Purpose of study</a></li>
   <li><a href="#c.-difference-in-seasons" id="toc-c.-difference-in-seasons" class="nav-link" data-scroll-target="#c.-difference-in-seasons">c.&nbsp;Difference in “seasons”</a></li>
+  <li><a href="#d.-table-of-models" id="toc-d.-table-of-models" class="nav-link" data-scroll-target="#d.-table-of-models">d.&nbsp;Table of models</a></li>
   <li><a href="#e.-run-the-models" id="toc-e.-run-the-models" class="nav-link" data-scroll-target="#e.-run-the-models">e. Run the models</a></li>
   <li><a href="#f.-check-the-diagnostics" id="toc-f.-check-the-diagnostics" class="nav-link" data-scroll-target="#f.-check-the-diagnostics">f.&nbsp;Check the diagnostics</a></li>
   <li><a href="#g.-select-the-best-model" id="toc-g.-select-the-best-model" class="nav-link" data-scroll-target="#g.-select-the-best-model">g. Select the best model</a></li>
@@ -177,11 +178,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Problem 1. Research writing</h1>
 <section id="a.-transparent-statistical-methods" class="level2">
 <h2 class="anchored" data-anchor-id="a.-transparent-statistical-methods">a. Transparent statistical methods</h2>
-<p>In part 1, they used a Pearson correlation coefficient to test the linear relationship between the two variables, distance from headwater (km) and nitrogen load (kg year⁻¹). In part 2, they used a one-way ANOVA to test for differences in average nitrogen load among the six different nitrogen sources.</p>
+<p>In part 1, they used a Pearson correlation coefficient to test the linear relationship between the two variables, distance from headwater (km) and nitrogen load (kg year⁻¹). In part 2, they used a one-way ANOVA to test for differences in average nitrogen load (kg year⁻¹) among the six different nitrogen sources (urban land, atmospheric deposition, fertilizer, wastewater treatment, and grasslands).</p>
 </section>
 <section id="b.-more-information-needed" class="level2">
 <h2 class="anchored" data-anchor-id="b.-more-information-needed">b. More information needed</h2>
-<p>Two additional tests/pieces of information that should be included in order to provide more context for the results would be a test for effect size (eta-squared) and a data visualization (boxplot or bar chart). An effect size test tells the viewer whether the observed differences are statistically significant, represented by a p-value. A data visualization helps communicate the patterns, variability, and group differences in a more accessible way by making the analysis visible.</p>
+<p>Two additional tests/pieces of information that should be included in order to provide more context for the results would be a test for effect size (eta-squared) and a data visualization (boxplot or bar chart). An effect size would quantify how much variation in average nitrogen load (kg year⁻¹) can be attributed to differences among the nitrogen sources. A boxplot or bar chart could display the distribution and variability of nitrogen loads across the different source categories. The data visualization could make the differences more accessible to a wider audience.</p>
 </section>
 <section id="c.-suggestions-for-rewriting" class="level2">
 <h2 class="anchored" data-anchor-id="c.-suggestions-for-rewriting">c.&nbsp;Suggestions for rewriting</h2>
@@ -213,11 +214,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code># A tibble: 5 × 3
   year  month mean_monthly_sst
   &lt;fct&gt; &lt;ord&gt;            &lt;dbl&gt;
-1 2023  May               14.3
-2 2020  Aug               17.8
-3 2018  Nov               17.9
-4 2023  Sep               18.4
-5 2019  Aug               17  </code></pre>
+1 2023  Jun               16  
+2 2023  Mar               12.8
+3 2022  Jul               17  
+4 2020  Dec               14.5
+5 2022  Aug               17.5</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Display the structure of cleaned data</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sst_clean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -273,7 +274,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="c.-difference-in-seasons" class="level2">
 <h2 class="anchored" data-anchor-id="c.-difference-in-seasons">c.&nbsp;Difference in “seasons”</h2>
-<p>The difference in “seasons” refers to the years 2016 and 2019, when the box occupancy data was collected due to mast tree flowering events triggering Swift Parrot breeding at the study site. The years differ in terms of the population dynamics, environmental conditions, and competitive pressures of the two other birds. ## d.&nbsp;Table of models</p>
+<p>The difference in “seasons” refers to the years 2016 and 2019, when the box occupancy data was collected due to mast tree flowering events triggering Swift Parrot breeding at the study site. The years differ in terms of the population dynamics, environmental conditions, and competitive pressures of the two other birds.</p>
+</section>
+<section id="d.-table-of-models" class="level2">
+<h2 class="anchored" data-anchor-id="d.-table-of-models">d.&nbsp;Table of models</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 21%">

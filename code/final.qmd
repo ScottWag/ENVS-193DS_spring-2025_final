@@ -34,11 +34,11 @@ nest_boxes <- read_csv(here("data", "occdist.csv"))
 
 ## a. Transparent statistical methods
 
-In part 1, they used a Pearson correlation coefficient to test the linear relationship between the two variables, distance from headwater (km) and nitrogen load (kg year⁻¹). In part 2, they used a one-way ANOVA to test for differences in average nitrogen load among the six different nitrogen sources.
+In part 1, they used a Pearson correlation coefficient to test the linear relationship between the two variables, distance from headwater (km) and nitrogen load (kg year⁻¹). In part 2, they used a one-way ANOVA to test for differences in average nitrogen load (kg year⁻¹) among the six different nitrogen sources (urban land, atmospheric deposition, fertilizer, wastewater treatment, and grasslands).
 
 ## b. More information needed
 
-Two additional tests/pieces of information that should be included in order to provide more context for the results would be a test for effect size (eta-squared) and a data visualization (boxplot or bar chart). An effect size test tells the viewer whether the observed differences are statistically significant, represented by a p-value. A data visualization helps communicate the patterns, variability, and group differences in a more accessible way by making the analysis visible.
+Two additional tests/pieces of information that should be included in order to provide more context for the results would be a test for effect size (eta-squared) and a data visualization (boxplot or bar chart). An effect size would quantify how much variation in average nitrogen load (kg year⁻¹) can be attributed to differences among the nitrogen sources. A boxplot or bar chart could display the distribution and variability of nitrogen loads across the different source categories. The data visualization could make the differences more accessible to a wider audience.
 
 ## c. Suggestions for rewriting
 
@@ -132,6 +132,7 @@ The study compares nest box usage between Swift Parrots, Common Starlings, and T
 ## c. Difference in “seasons”
 
 The difference in "seasons" refers to the years 2016 and 2019, when the box occupancy data was collected due to mast tree flowering events triggering Swift Parrot breeding at the study site. The years differ in terms of the population dynamics, environmental conditions, and competitive pressures of the two other birds. 
+
 ## d. Table of models
 
 | Model number | Season | Distance to forest edge | Model description | 
